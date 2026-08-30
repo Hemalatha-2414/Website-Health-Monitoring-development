@@ -10,6 +10,7 @@ from database import (
     get_websites,
     save_monitoring_result,
     get_latest_result
+    create_user
 )
 
 from monitor import check_website
@@ -106,6 +107,75 @@ class WebsiteMonitorHandler(
     
 
     def do_POST(self):
+        if self.path == "/api/signup":
+
+    content_length = int(
+        self.headers.get(
+            "Content-Length",
+            0
+        )
+    )
+
+    body = self.rfile.read(
+        content_length
+    )
+
+    try:
+
+        data = json.loads(
+            body.decode("utf-8")
+        )
+
+        name = data.get("name")
+        email = data.get("email")
+        password = data.get("password")
+
+        if not name or not email or not password:
+
+            self.send_json_response(
+                {
+                    "error": "All fields are required"
+                },
+                400
+            )
+
+            return
+
+        user = create_user(
+            name,
+            email,
+            password
+        )
+
+        if user is None:
+
+            self.send_json_response(
+                {
+                    "error": "Email already registered"
+                },
+                409
+            )
+
+            return
+
+        self.send_json_response(
+            {
+                "message": "Account created successfully",
+                "user": user
+            },
+            201
+        )
+
+    except json.JSONDecodeError:
+
+        self.send_json_response(
+            {
+                "error": "Invalid JSON"
+            },
+            400
+        )
+
+elif self.path == "/api/websites":
 
         if self.path == "/api/websites":
 

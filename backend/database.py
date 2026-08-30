@@ -1,4 +1,5 @@
 import sqlite3
+import hashlib
 from pathlib import Path
 
 
@@ -36,6 +37,15 @@ def initialize_database():
             FOREIGN KEY (website_id) REFERENCES websites(id)
         )
     """)
+    cursor.execute("""
+    CREATE TABLE IF NOT EXISTS users (
+        id INTEGER PRIMARY KEY AUTOINCREMENT,
+        name TEXT NOT NULL,
+        email TEXT NOT NULL UNIQUE,
+        password_hash TEXT NOT NULL,
+        created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+    )
+""")
 
     connection.commit()
     connection.close()
@@ -162,3 +172,45 @@ def get_latest_result(website_id):
 if __name__ == "__main__":
     initialize_database()
     print("Database initialized successfully.")
+    def hash_password(password):
+    return hashlib.sha256(
+        password.encode("utf-8")
+    ).hexdigest()
+
+
+def create_user(name, email, password):
+
+    connection = get_connection()
+    cursor = connection.cursor()
+
+    password_hash = hash_password(password)
+
+    try:
+        cursor.execute("""
+            INSERT INTO users (
+                name,
+                email,
+                password_hash
+            )
+            VALUES (?, ?, ?)
+        """, (
+            name,
+            email,
+            password_hash
+        ))
+
+        connection.commit()
+
+        user_id = cursor.lastrowid
+
+        return {
+            "id": user_id,
+            "name": name,
+            "email": email
+        }
+
+    except sqlite3.IntegrityError:
+        return None
+
+    finally:
+        connection.close()
