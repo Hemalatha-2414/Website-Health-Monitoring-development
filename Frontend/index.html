@@ -12,69 +12,323 @@
 
 <body>
 
-    <!-- Navigation Bar -->
+    <!-- ================= SIGN UP PAGE ================= -->
 
-    <nav class="navbar">
+    <section id="signupPage" class="auth-page">
 
-        <div class="brand">
+        <div class="auth-left">
 
-            <div class="brand-logo">
-                🌐
+            <div class="brand-name">
+                🌐 Website Health Checker
             </div>
 
-            <span>
-                Website Health Monitor
-            </span>
+            <div class="hero-content">
+
+                <div class="monitor-visual">
+
+                    <div class="browser">
+
+                        <div class="browser-header">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </div>
+
+                        <div class="browser-body">
+
+                            <div class="health-circle">
+                                ✓
+                            </div>
+
+                            <h3>Website Healthy</h3>
+
+                            <div class="chart-line"></div>
+
+                        </div>
+
+                    </div>
+
+                    <div class="floating-card card-one">
+                        ⚡ Fast Response
+                    </div>
+
+                    <div class="floating-card card-two">
+                        ✓ Online
+                    </div>
+
+                </div>
+
+
+                <h1>
+                    Monitor Your Website
+                    <br>
+                    With Confidence
+                </h1>
+
+                <p>
+                    Check website availability, performance
+                    and health from one powerful dashboard.
+                </p>
+
+            </div>
 
         </div>
 
 
-        <div class="nav-links">
+        <!-- SIGN UP FORM -->
 
-            <button class="nav-button active" id="homeButton">
-                Home
-            </button>
+        <div class="auth-right">
 
-            <button class="nav-button" id="monitorButton">
-                Monitor
-            </button>
+            <div class="form-container">
 
-            <button class="nav-button" id="aboutButton">
-                About
-            </button>
+                <h2>Create Account ✨</h2>
 
-            <button class="login-button" id="loginButton">
-                Login
-            </button>
+                <p class="form-subtitle">
+                    Start monitoring your websites today.
+                </p>
+
+
+                <label>Name</label>
+
+                <input
+                    type="text"
+                    id="signupName"
+                    placeholder="Enter your name"
+                >
+
+
+                <label>Email Address</label>
+
+                <input
+                    type="email"
+                    id="signupEmail"
+                    placeholder="Enter your email"
+                >
+
+
+                <label>Password</label>
+
+                <input
+                    type="password"
+                    id="signupPassword"
+                    placeholder="Create a password"
+                >
+
+
+                <button
+                    id="signupButton"
+                    class="primary-button"
+                >
+                    Create Account →
+                </button>
+
+
+                <p class="switch-text">
+
+                    Already have an account?
+
+                    <button
+                        id="goToLogin"
+                        class="text-button"
+                    >
+                        Sign In
+                    </button>
+
+                </p>
+
+            </div>
 
         </div>
 
-    </nav>
+    </section>
 
 
-    <!-- Home Section -->
 
-    <section id="home" class="hero-section">
+    <!-- ================= LOGIN PAGE ================= -->
 
-        <div class="gradient-circle circle-one"></div>
-        <div class="gradient-circle circle-two"></div>
-        <div class="gradient-circle circle-three"></div>
+    <section
+        id="loginPage"
+        class="auth-page hidden"
+    >
+
+        <div class="auth-left">
+
+            <div class="brand-name">
+                🌐 Website Health Checker
+            </div>
 
 
-        <main class="container">
+            <div class="hero-content">
+
+                <div class="login-visual">
+
+                    <div class="shield-circle">
+                        🔐
+                    </div>
+
+                </div>
 
 
-            <!-- Hero -->
+                <h1>
+                    Welcome Back
+                </h1>
 
-            <section class="hero">
 
-                <div class="logo-circle">
+                <p>
+                    Sign in and continue monitoring
+                    your websites with confidence.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <!-- LOGIN FORM -->
+
+        <div class="auth-right">
+
+            <div class="form-container">
+
+                <h2>Sign In 👋</h2>
+
+                <p class="form-subtitle">
+                    Welcome back! Please enter your details.
+                </p>
+
+
+                <label>Email Address</label>
+
+                <input
+                    type="email"
+                    id="loginEmail"
+                    placeholder="Enter your email"
+                >
+
+
+                <label>Password</label>
+
+                <input
+                    type="password"
+                    id="loginPassword"
+                    placeholder="Enter your password"
+                >
+
+
+                <button
+                    id="signinButton"
+                    class="primary-button"
+                >
+                    Sign In →
+                </button>
+
+
+                <p class="switch-text">
+
+                    Don't have an account?
+
+                    <button
+                        id="goToSignup"
+                        class="text-button"
+                    >
+                        Sign Up
+                    </button>
+
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- ================= DASHBOARD ================= -->
+
+    <section
+        id="dashboardPage"
+        class="dashboard-page hidden"
+    >
+
+
+        <!-- NAVBAR -->
+
+        <nav class="navbar">
+
+            <div class="dashboard-brand">
+
+                <div class="nav-logo">
                     🌐
                 </div>
+
+                <span>
+                    Website Health Monitor
+                </span>
+
+            </div>
+
+
+            <div class="nav-links">
+
+                <button
+                    class="nav-button active"
+                    id="homeButton"
+                >
+                    Home
+                </button>
+
+
+                <button
+                    class="nav-button"
+                    id="monitorButton"
+                >
+                    Monitor
+                </button>
+
+
+                <button
+                    class="nav-button"
+                    id="aboutButton"
+                >
+                    About
+                </button>
+
+
+                <button
+                    class="logout-button"
+                    id="logoutButton"
+                >
+                    Logout
+                </button>
+
+            </div>
+
+        </nav>
+
+
+
+        <!-- DASHBOARD CONTENT -->
+
+        <main class="dashboard-container">
+
+
+            <!-- HOME -->
+
+            <section
+                id="homeSection"
+                class="dashboard-hero"
+            >
+
+                <div class="dashboard-icon">
+                    🌐
+                </div>
+
 
                 <h1>
                     Website Health Monitor
                 </h1>
+
 
                 <p>
                     Monitor your website's availability,
@@ -84,50 +338,38 @@
             </section>
 
 
-            <!-- URL Search -->
 
-            <section class="search-box">
+            <!-- URL CHECKER -->
 
-                <div class="input-wrapper">
+            <section class="checker-box">
 
-                    <span class="link-icon">
-                        🔗
-                    </span>
-
-                    <input
-                        type="text"
-                        id="websiteUrl"
-                        placeholder="Enter website URL (e.g. https://google.com)"
-                    >
-
-                </div>
+                <input
+                    type="text"
+                    id="websiteUrl"
+                    placeholder="Enter website URL (e.g. https://google.com)"
+                >
 
 
                 <button id="checkButton">
-
-                    <span>
-                        🚀
-                    </span>
-
-                    Check Website
-
+                    🚀 Check Website
                 </button>
 
             </section>
 
 
-            <!-- Status Section -->
+
+            <!-- MONITOR -->
 
             <section
-                id="monitor"
-                class="status-section"
+                id="monitorSection"
+                class="monitor-section"
             >
 
-                <div class="section-header">
+                <div class="section-title">
 
                     <div>
 
-                        <span class="small-title">
+                        <span>
                             LIVE MONITORING
                         </span>
 
@@ -138,21 +380,20 @@
                     </div>
 
 
-                    <span class="time">
+                    <div class="ready-status">
                         ● Ready
-                    </span>
+                    </div>
 
                 </div>
+
 
 
                 <div class="status-grid">
 
 
-                    <!-- Status Card -->
-
                     <div class="status-card">
 
-                        <div class="card-icon blue-icon">
+                        <div class="card-icon blue">
                             🌐
                         </div>
 
@@ -164,18 +405,13 @@
                             Ready
                         </h3>
 
-                        <span class="waiting blue-badge">
-                            Waiting for URL
-                        </span>
-
                     </div>
 
 
-                    <!-- Response Card -->
 
                     <div class="status-card">
 
-                        <div class="card-icon green-icon">
+                        <div class="card-icon green">
                             ⚡
                         </div>
 
@@ -187,18 +423,13 @@
                             --
                         </h3>
 
-                        <span class="waiting green-badge">
-                            Waiting
-                        </span>
-
                     </div>
 
 
-                    <!-- Status Code Card -->
 
                     <div class="status-card">
 
-                        <div class="card-icon orange-icon">
+                        <div class="card-icon orange">
                             &lt;/&gt;
                         </div>
 
@@ -210,10 +441,6 @@
                             --
                         </h3>
 
-                        <span class="waiting orange-badge">
-                            Waiting
-                        </span>
-
                     </div>
 
 
@@ -222,77 +449,45 @@
             </section>
 
 
-            <!-- About Section -->
+
+            <!-- ABOUT -->
 
             <section
-                id="about"
-                class="info-card"
+                id="aboutSection"
+                class="about-section"
             >
 
-                <div class="info-icon">
+                <div class="about-icon">
                     🛡️
                 </div>
 
 
                 <div>
 
-                    <span class="small-title">
+                    <span>
                         RELIABLE MONITORING
                     </span>
 
+
                     <h2>
-                        Monitor Your Website Easily
+                        Monitor With Confidence
                     </h2>
 
+
                     <p>
-                        Check your website availability,
-                        response time and status code
-                        in one simple dashboard.
+                        Our platform helps you monitor
+                        website availability, response time
+                        and status codes from one place.
                     </p>
-
-                </div>
-
-
-                <div class="illustration">
-
-                    <div class="mini-browser">
-
-                        <div class="browser-top">
-                            <span></span>
-                            <span></span>
-                            <span></span>
-                        </div>
-
-                        <div class="browser-content">
-
-                            <div class="success-icon">
-                                ✓
-                            </div>
-
-                            <p>
-                                Website Healthy
-                            </p>
-
-                        </div>
-
-                    </div>
 
                 </div>
 
             </section>
 
 
-            <!-- Footer -->
-
             <footer>
 
-                <p>
-                    © 2026 Website Health Monitor
-                </p>
-
-                <p>
-                    Built for reliable monitoring 💜
-                </p>
+                © 2026 Website Health Monitor
 
             </footer>
 
@@ -300,58 +495,6 @@
         </main>
 
     </section>
-
-
-    <!-- Login Modal -->
-
-    <div id="loginModal" class="modal hidden">
-
-        <div class="modal-box">
-
-            <button
-                id="closeLogin"
-                class="close-button"
-            >
-                ×
-            </button>
-
-
-            <div class="login-icon">
-                👤
-            </div>
-
-
-            <h2>
-                Welcome Back
-            </h2>
-
-            <p>
-                Login to your account
-            </p>
-
-
-            <input
-                type="email"
-                placeholder="Enter your email"
-            >
-
-
-            <input
-                type="password"
-                placeholder="Enter your password"
-            >
-
-
-            <button class="login-submit">
-
-                Login
-
-            </button>
-
-
-        </div>
-
-    </div>
 
 
     <script src="script.js"></script>
